@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makbule's Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden { display: none; }
+    </style>
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">LOGO</a>
+            </div>
+            <ul>
+                <li><a href="index.html" class="active" onclick="showSection('Ana sayfa')">Ana Sayfa</a></li>
+                <li><a href="hakkımda.html" onclick="showSection('Hakkımda')">Hakkımda</a></li>
+                <li><a href="projelerim.html" onclick="showSection('Projeler')">Projeler</a></li>
+                <li><a href="değerlendirme.html" onclick="showSection('Değerlendirme')">Değerlendirme</a></li>
+                <li><a href="iletişim.html" onclick="showSection('İletişim')">İletişim</a></li>
+            </ul>
+        </div>
+        <div id="Ana Sayfa" class="section hidden">Ana Sayfa Content</div>
+        <div id="Hakkımda" class="section hidden">Hakkımda Content</div>
+        <div id="Projeler" class="section hidden">Projeler Content</div>
+        <div id="Değerlendirme" class="section hidden">Değerlendirme Content</div>
+        <div id="İletişim" class="section hidden">İletişim Content</div>
+        <div class="center">
+            <div id="değerlendirme">
+                <h2>Memnuniyet Anketi</h2>
+                <form>
+                    <label for="satisfaction">Memnuniyet Seviyesi:</label><br>
+                    <select id="satisfaction" name="satisfaction">
+                        <option value="1">1 - Çok İyi</option>                     
+                        <option value="2">2 - İyi</option>                     
+                        <option value="3">3 - Orta</option>                     
+                        <option value="4">4 - Kötü</option>                     
+                        <option value="5">5 - Berbat</option>
+                    </select><br><br>
+                    <label for="feedback">Geri Bildirim:</label><br>
+                    <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Yorumlarınızı buraya yazın..."></textarea><br><br>
+                    <input type="submit" value="Gönder">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
+
